@@ -1,18 +1,17 @@
+/*
 package com.zdziechowski.movierental.dao;
 
 import com.zdziechowski.movierental.carrier.Carrier;
 import com.zdziechowski.movierental.carrier.Videotape;
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
-import javax.swing.text.View;
-
+*/
 /**
  * Created by Asus on 2016-11-28.
- */
+ *//*
+
 public class MovieRentalLinkedListTest {
     public void setUp() throws Exception {
 
@@ -66,4 +65,4 @@ public class MovieRentalLinkedListTest {
         //then
         Mockito.verify(carrier, Mockito.times(1)).isAvailable();
     }
-}
+}*/

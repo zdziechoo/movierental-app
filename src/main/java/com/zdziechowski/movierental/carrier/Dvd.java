@@ -1,27 +1,17 @@
 package com.zdziechowski.movierental.carrier;
 
 final public class Dvd implements Carrier {
-	private String title;
+	private String releaseYear;
 	private String category;
 	private boolean available = true; // when true - available, false - loaned
 
-    public Dvd(String title,
-               String category) {
-        //super();
-        this.title = title;
-        this.category = category;
+    public Dvd(String releaseYear, String category) {
+        this.releaseYear = releaseYear;
+    	this.category = category;
 		this.available = true;
 	}
 
 	public Dvd() {
-	}
-
-	public String getName() {
-		return title;
-	}
-
-	public void setName(String name) {
-		this.title = name;
 	}
 
 	public String getCategory() {
@@ -44,7 +34,11 @@ final public class Dvd implements Carrier {
 		return "dvd";
 	}
 
-	public String toString(){return title;}
+	public String getReleaseYear() {
+		return releaseYear;
+	}
 
-
+	public void setReleaseYear(String releaseYear) {
+		this.releaseYear = releaseYear;
+	}
 }

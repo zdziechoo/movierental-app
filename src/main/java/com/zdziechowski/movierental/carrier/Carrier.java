@@ -3,10 +3,6 @@ package com.zdziechowski.movierental.carrier;
 public interface Carrier {
 	//final String[] CATEGORIES = {"comedy","horror","action","thriller","biography","for children","for teenagers"};
 
-	String getName();
-
-	void setName(String name);
-
 	String getCategory();
 
 	void setCategory(String category);
@@ -16,5 +12,9 @@ public interface Carrier {
 	boolean isAvailable();
 
 	void setAvailable(boolean status);
+
+	String getReleaseYear();
+
+	void setReleaseYear(String releaseYear);
 	
 }

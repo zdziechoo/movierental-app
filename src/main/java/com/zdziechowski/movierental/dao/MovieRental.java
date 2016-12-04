@@ -1,3 +1,4 @@
+/*
 package com.zdziechowski.movierental.dao;
 
 import java.util.*;
@@ -55,3 +56,4 @@ public class MovieRental {
         System.out.println(movies.get(movies.size() - 1).getName());
         }
 }
+*/

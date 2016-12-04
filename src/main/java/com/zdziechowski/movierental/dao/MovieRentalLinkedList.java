@@ -1,3 +1,4 @@
+/*
 package com.zdziechowski.movierental.dao;
 
 import com.zdziechowski.movierental.carrier.Carrier;
@@ -59,3 +60,4 @@ public class MovieRentalLinkedList {
         System.out.println(movies.get(movies.size() - 1).getName());
     }
 }
+*/

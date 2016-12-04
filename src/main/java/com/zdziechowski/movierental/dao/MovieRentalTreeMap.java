@@ -7,7 +7,6 @@ import java.util.*;
 
 public class MovieRentalTreeMap {
     private Map<String,ArrayList<Carrier>> movies= new TreeMap<>();
-
     public void addCarrier(String title, Carrier carrierToAdd){
         if (movies.containsKey(title)) {
             movies.get(title).add(carrierToAdd);
@@ -42,8 +41,8 @@ public class MovieRentalTreeMap {
         ArrayList<Carrier> result = new ArrayList<>();
         for (Carrier m:movies.get(title)) {
             Carrier c = null;
-            if(m instanceof Videotape){c = new Videotape(m.getName(),m.getCategory());}
-            if(m instanceof Dvd){c = new Dvd(m.getName(),m.getCategory());}
+            if(m instanceof Videotape){c = new Videotape(m.getReleaseYear(),m.getCategory());}
+            if(m instanceof Dvd){c = new Dvd(m.getReleaseYear(),m.getCategory());}
             c.setAvailable(m.isAvailable());
             result.add(c);
         }
@@ -58,4 +57,11 @@ public class MovieRentalTreeMap {
 
     }
 
+    public void rentCarrierByTitle(String titleToRent) {
+        //to do
+    }
+
+    public void sortByCategory() {
+        //to do
+    }
 }

@@ -4,6 +4,7 @@
  * mozliwosc wypisania posortowanych plyt: a po typie filmu, b po tytule
 */
 
+/*
 
 package com.zdziechowski.movierental.console;
 
@@ -11,7 +12,7 @@ import java.util.*;
 
 import com.zdziechowski.movierental.carrier.*;
 import com.zdziechowski.movierental.dao.MovieRentalLinkedList;
-import com.zdziechowski.movierental.console.Option;
+
 import static com.zdziechowski.movierental.console.Option.END_THE_PROGRAM;
 import static java.util.stream.Stream.of;
 
@@ -39,9 +40,11 @@ class App
         }
     }
     private static void printMenu() {
-            /*for (Option option : Option.values()) {
+            */
+/*for (Option option : Option.values()) {
                 System.out.println(option.getDescription());
-            }*/
+            }*//*
+
 
         of(Option.values())
                 .map(Option::getDescription)
@@ -95,4 +98,4 @@ class App
     }
 
 
-}
+}*/

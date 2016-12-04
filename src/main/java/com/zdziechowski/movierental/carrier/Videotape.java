@@ -1,28 +1,17 @@
 package com.zdziechowski.movierental.carrier;
 
 public class Videotape implements Carrier {
-	private String title;
+	private String releaseYear;
 	private String category;
 	private boolean available = true; // when true - available, false - loaned
 
-	public Videotape(String name, String category) {
-		super();
-		this.title = name;
+	public Videotape(String releaseYear, String category) {
+		this.releaseYear = releaseYear;
 		this.category = category;
 		this.available = true;
 	}
 
 	public Videotape() {
-	}
-
-	@Override
-	public String getName() {
-		return title;
-	}
-
-	@Override
-	public void setName(String name) {
-		this.title = name;
 	}
 
 	@Override
@@ -51,5 +40,12 @@ public class Videotape implements Carrier {
 		// TODO Auto-generated method stub
 		this.available = status;
 	}
-	public String toString(){return title;}
+	public String getReleaseYear() {
+		return releaseYear;
+	}
+
+	public void setReleaseYear(String releaseYear) {
+		this.releaseYear = releaseYear;
+	}
+
 }
