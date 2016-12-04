@@ -44,4 +44,7 @@ final public class Dvd implements Carrier {
 		return "dvd";
 	}
 
+	public String toString(){return title;}
+
+
 }

@@ -51,5 +51,5 @@ public class Videotape implements Carrier {
 		// TODO Auto-generated method stub
 		this.available = status;
 	}
-
+	public String toString(){return title;}
 }
