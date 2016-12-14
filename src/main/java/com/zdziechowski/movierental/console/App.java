@@ -1,32 +1,28 @@
-/* zaimplementować program do obsługi wypożyczalni video
- * funkcjonalnosci: dodaj plyte (do zbioru), dodaj kasete, wypozycz plyte, wypozycz kasete
- * mozliwosc wypisywania wszystkich plyt i kaset na stanie
- * mozliwosc wypisania posortowanych plyt: a po typie filmu, b po tytule
-*/
-
-/*
-
 package com.zdziechowski.movierental.console;
 
-import java.util.*;
+import com.zdziechowski.movierental.carrier.Dvd;
+import com.zdziechowski.movierental.carrier.Videotape;
+import com.zdziechowski.movierental.dao.MovieRental;
 
-import com.zdziechowski.movierental.carrier.*;
-import com.zdziechowski.movierental.dao.MovieRentalLinkedList;
+import java.util.Scanner;
 
 import static com.zdziechowski.movierental.console.Option.END_THE_PROGRAM;
 import static java.util.stream.Stream.of;
 
+/**
+ * Created by Asus on 2016-12-03.
+ */
+public class App {
 
-class App
-{
-    private static MovieRentalLinkedList movieRental = new MovieRentalLinkedList();
+    private static MovieRental movieRental = new MovieRental();
     private static final Scanner scanner = new Scanner(System.in);
     private static boolean end = false;
 
-    public static void main(String[] args )
+    public static void main(String[] args)
     {
-        loadSampleData();
+
         while (!end) {
+            loadSampleData();
             printMenu();
             movieRental.print();
             try {
@@ -39,13 +35,28 @@ class App
             }
         }
     }
+
+    private static void loadSampleData(){
+        if(movieRental.isEmpty()){
+            Dvd dvd1 = new Dvd("1984", "action");
+            Dvd dvd2 = new Dvd("1991", "action");
+            Dvd dvd3 = new Dvd("1994", "comedy");
+            Dvd dvd4 = new Dvd("1994", "comedy");
+
+            Videotape video1 = new Videotape("1991", "action");
+            Videotape video2 = new Videotape("2012", "action");
+            Videotape video3 = new Videotape("1998", "for kids");
+            movieRental.addCarrier("Terminator",dvd1);
+            movieRental.addCarrier("Terminator 2",video1);
+            movieRental.addCarrier("Terminator 2",dvd2);
+            movieRental.addCarrier("Avengers",video2);
+            movieRental.addCarrier("Pocahontas 2",video3);
+            movieRental.addCarrier("Dumb & Dumber",dvd3);
+            movieRental.addCarrier("Dumb & Dumber",dvd4);
+        }
+    }
+
     private static void printMenu() {
-            */
-/*for (Option option : Option.values()) {
-                System.out.println(option.getDescription());
-            }*//*
-
-
         of(Option.values())
                 .map(Option::getDescription)
                 .forEach(System.out::println);
@@ -63,39 +74,12 @@ class App
         throw new InvalidOptionException();
     }
 
-    private static void loadSampleData() {
-        if (movieRental.isEmpty()) {
-            //adding sample data
-            Dvd dvd1 = new Dvd("Terminator", "action");
-            Dvd dvd2 = new Dvd("Terminator 2", "action");
-            Dvd dvd3 = new Dvd("Dumb & Dumber", "comedy");
-            Dvd dvd4 = new Dvd("Ace Ventura", "comedy");
-
-            Videotape video1 = new Videotape("Terminator 2", "action");
-            Videotape video2 = new Videotape("Avengers", "action");
-            Videotape video3 = new Videotape("Pocahontas 2", "for kids");
-
-            movieRental.addCarrier(dvd1);
-            movieRental.addCarrier(dvd2);
-            movieRental.addCarrier(dvd3);
-            movieRental.addCarrier(dvd4);
-
-            movieRental.addCarrier(video1);
-            movieRental.addCarrier(video2);
-            movieRental.addCarrier(video3);
-        }
-
-        addSamples(new char[10], 0, 5);
-    }
-
-    private static void addSamples(char[] out, int pos, int len) {
+    /*private static void addSamples(char[] out, int pos, int len) {
         if (pos > 0) movieRental.addCarrier(new Videotape(new String(out, 0, pos), "sample"));
         if (pos < len) for (char c = 'a'; c <= 'r'; c++) {
             out[pos] = c;
             addSamples(out, pos + 1, len);
         }
 
-    }
-
-
-}*/
+    }*/
+}
